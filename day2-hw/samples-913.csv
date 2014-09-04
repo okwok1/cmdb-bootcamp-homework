@@ -1,0 +1,2 @@
+tracking_id	class_code	nearest_ref_id	gene_id	gene_short_name	tss_id	locus	length	coverage	FPKM	FPKM_conf_lo	FPKM_conf_hi	FPKM_status
+FBgn0264270	-	-	FBgn0264270	Sxl	-	X:6968582-6992089	-	-	342.875	335.495	350.256	OK
