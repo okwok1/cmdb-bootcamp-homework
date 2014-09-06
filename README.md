@@ -171,5 +171,9 @@ keep the final.gtf files, ran getfasta
 
 pos - take from left side; min - take from right side
 
-ran gc.py to get gc content. have gc.dat and gc-
-attempted to run
+FPKM-pos/min.txt files contain FPKM values
+
+Used pos-transcripts-only-final.fa and min-transcripts-only-final.fa (500 bp sections of the genome) for use in determining gc content
+
+ran gc.py to get gc content. have gc.dat and gc-flat.dat
+attempted to run fpkm-vs-gc-pos/min.py, but could not get it to perform linear regression or form a line
