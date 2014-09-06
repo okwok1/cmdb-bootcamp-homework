@@ -55,4 +55,4 @@ Lists = " ".join(List)
 print Lists
 #sequence = "".join( sequences ) #join together the list using this string as a delimiter; so pushes everything together; not add to string
 
-#print sid, sequence #ID, then sequence
+#print sid, sequence #ID, then sequence; but couldn't figure out the length of the longest consecutively matched sequences
