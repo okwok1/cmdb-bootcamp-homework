@@ -9,7 +9,8 @@ import sys
 #common_dir = "/Users/cmdb/data/day1/cl-893"
 #transcripts_file = "%s/transcripts.gtf" % common_dir
 #cufflinks_output = "%s/transcripts.fa" % common_dir
-#put in
+#put in output.dat that resulted from getfasta (on transcripts-only.gtf, which only has transcripts)
+#./hw1.py < output.dat
 
 x = 0
 transcripts = 0
@@ -32,3 +33,4 @@ print sorted(Lists2, key=len)[-100:]
 
 #unsure whether I would determine the longest assembled transcripts through which file: the .gtf file or the .fa file;
 #what was meant by extract?
+#extract using getfasta, then run this program to extract sequences

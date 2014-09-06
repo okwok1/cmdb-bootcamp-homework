@@ -131,4 +131,45 @@ uncharacterized_change_in_nucleotide_sequence
 5603 transposable_element
 65458 transposable_element_insertion_site
   22 uncharacterized_change_in_nucleotide_sequence
-   
+
+==============
+Day 4
+
+Task
+1. Sample893... 
+- Determine GC content of 500 bp region around each transcript
+- Build linear regression model of fpkm (log it or something) ~ GC
+- Plots with regression line
+2. (Advanced) 
+- Same thing but with GC content and CpG Content
+
+Hint: can accomplish these with bedtools... involve grep, possibly awk, definitely python
+
+chromosome's gtf file
+[] 2L say 1000 -> 2000
+transcripts.gtf file
+need 750 to 1250
+
+bedtools flank to change the interval
+bedtools flank gives 750 - 1000 and 2000-2250 X
+
+use bedtools flank -l 250 (750-1000)
+transcripts-250up.gtf (750-1000)
+
+then use ^ as starting file, use -r 250
+then (1000-1250) - there are options that retain original piece
+transcripts-500.gtf
+
+then use getfasta: which needs gtf file (500) and dmel[...].fasta
+
+getfasta gives back a sequence, not change the interval
+
+but... there is a .fasta.fai file that seemed to have occurred from the getfasta operation. So, used .fasta.fai as <genome>
+
+... files: l-250 *x (1 -> 2 -> 3), then r-500 (3 -> final)
+keep the final.gtf files, ran getfasta
+
+pos - take from left side; min - take from right side
+
+ran gc.py to get gc content. have gc.dat and gc-
+attempted to run

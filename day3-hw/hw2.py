@@ -5,6 +5,7 @@ import orfs
 
 #Find the ORFS in these transcripts, and print all ORFs found
 #AUG = start codon; UAA, UAG, UGA = stop codons
+#used output.dat as input file
 
 common_dir = "/Users/cmdb/data/day1/cl-893"
 transcripts_file = "%s/transcripts.gtf" % common_dir
@@ -114,13 +115,16 @@ f.close()
 
 
 def revcompl2(x):
-   return ''.join([{'A':'T','C':'G','G':'C','T':'A'}[B] for B in x][::-1])
+   return ''.join([{'A':'T','C':'G','G':'C','T':'A','N':''}[B] for B in x][::-1])
 print revcompl2(Lists3[1])
 
+n = 0
 all_compl = []
 for n in range( 0, 99):
     compl = revcompl2(Lists3[ n ] )
     all_compl.append( compl )
+
+#there's an error occuring with the reverse complement... it was working before... but now there is a KeyError 'N'
 
 orf = []
 for n in range( 0, 99 ):
@@ -179,3 +183,4 @@ f.close()
         
 #this thing only gives me 100 peptides; cannot figure out how to get all of the peptides from all 6 reading frames
 #print sorted(Lists, key=len)[-100:]
+#update: now it gives a whole bunch of peptides. The complement are on the second file.
