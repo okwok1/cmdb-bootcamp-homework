@@ -175,5 +175,11 @@ FPKM-pos/min.txt files contain FPKM values
 
 Used pos-transcripts-only-final.fa and min-transcripts-only-final.fa (500 bp sections of the genome) for use in determining gc content
 
+- 1. Used bedtools flank to take a portion to the left of the starting position (for pos/ reverse for min); flank 3 times, with third in reverse direction and 2x
+- ran bedtools getfasta before to get the dmel-all-chromosome-r5.57.fasta.fai file to run as the <genome> 
+- before this, I used grep to get only the lines of the .gtf files with "transcript" in them (as opposed to exon)
+- I then separated by + and - (pos and min)
+- 2. Used bedtools getfasta to generate sequences for pos and min of 500 bp each (for each sequence)
+
 ran gc.py to get gc content. have gc.dat and gc-flat.dat
 attempted to run fpkm-vs-gc-pos/min.py, but could not get it to perform linear regression or form a line
