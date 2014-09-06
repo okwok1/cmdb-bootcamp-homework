@@ -5,16 +5,24 @@ import pandas as pd
 cufflinks_output = "/Users/cmdb/data/results/SRR072893_clout/genes.fpkm_tracking"
 df = pd.read_table( cufflinks_output )
 
-dfmedian = df['FPKM'].median()
-dfmax = df['FPKM'].max()
-dfmin = df['FPKM'].min()
-dfrange = dfmax - dfmin
+#dfmedian = df['FPKM'].median()
+#dfmax = df['FPKM'].max()
+#dfmin = df['FPKM'].min()
+#dfrange = dfmax - dfmin
 
 cufflinks_output2 = "/Users/cmdb/data/results/SRR072915_clout/genes.fpkm_tracking"
 df2 = pd.read_table( cufflinks_output2 )
 
 #print df.describe(percentiles=[0.33, 0.66])["FPKM"]
 #print df2.describe(percentiles=[0.33, 0.66])["FPKM"]
+
+#--base = "/Users/cmdb/data/results/"
+#df = pandas.rd_csv( "samples.csv" )
+
+#all_samples = {}
+
+#for sample in df["sample"]:
+    #all_samples[sample] = pandas.read_table( base + sample + "_clout/" + "genes.fpkm_tracking" )["FPKM"] --
 
 #df_33ile = 0
 #df_66ile = 16.637064
